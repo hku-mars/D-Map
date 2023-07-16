@@ -53,7 +53,6 @@
   <build_depend>octomap</build_depend>
   <build_depend>octomap_msg</build_depend>
   <build_depend>visualization_msgs</build_depend>
-  <build_depend>livox_ros_driver</build_depend>
 
   <build_export_depend>cmake_modules</build_export_depend>
   <build_export_depend>geometry_msgs</build_export_depend>
@@ -75,7 +74,6 @@
   <exec_depend>octomap</exec_depend>
   <exec_depend>octomap_mgsg</exec_depend>
   <exec_depend>visualization_msgs</exec_depend>
-  <exec_depend>livox_ros_driver</exec_depend>
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->

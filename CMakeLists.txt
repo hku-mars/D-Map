@@ -18,7 +18,6 @@ find_package(catkin REQUIRED COMPONENTS
   roslib
   sensor_msgs
   visualization_msgs
-  livox_ros_driver
   cv_bridge
 )
 
