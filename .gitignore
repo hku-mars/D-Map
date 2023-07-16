@@ -1,0 +1,7 @@
+Log/*.csv
+Log/*.txt
+Log/*.bt
+Log/*.ot
+/.vscode
+debug/*.txt
+bash/*.out

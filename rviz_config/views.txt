@@ -1,0 +1,8 @@
+distance: 37.4573
+yaw: 1.24399
+pitch: 0.659796
+focal point: 2.1061; 7.9902; 3.8489e-5
+
+octomap
+distance: 22.4604
+focal point: 1.3914; 6.9318; 3.4674e-5

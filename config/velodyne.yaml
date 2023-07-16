@@ -1,0 +1,17 @@
+FOV_shape: 0            # 0: normal FoV Shape (Repetitive Scan), 1: Corn Shape (Non-repetitive Scan)
+FOV_theta_range: [-180.0,180.0]          # Unit: deg
+FOV_phi_range: [-25.24,4.12]             # Unit: deg
+FOV_depth: 120.0        # Unit: meter
+# sensor_res_hor: [0.12]    # Unit: deg
+# sensor_res_vert: [0.4]    # Unit: deg
+sensor_res_hor: [0.12]    # Unit: deg
+sensor_res_vert: [0.4]    # Unit: deg
+environment: [-80.000,-80.000,-5.000,471.000,80.000,11.000]      # Unit: meter
+extrinsic_T: [0.0,0.0,0.0]
+extrinsic_q: [0.5,-0.5,0.5,0.5]
+
+point_frame: "body"
+lidar_topic: "/velodyne_points"
+odom_topic: "/odometry_gt"
+odom_topic_type: "odometry"
+fixed_frame: "world"
