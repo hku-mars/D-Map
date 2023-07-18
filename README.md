@@ -13,13 +13,24 @@
 
 The map structure of D-Map consists of two parts: the occupied map and the unknown map. The green block represents the pipeline of the occupancy update strategy. At each update, a depth image is rasterized from the incoming point clouds at the sensor pose. Subsequently, a 2-D segment tree is constructed on the depth image to enable efficient occupancy state determination. The cell extraction module retracts the unknown cells on the octree from the largest to the smallest size, projects them to the depth image, and determines their occupancy states. The cells determined as known are directly removed from the map, while the unknown ones remain, and the undetermined ones are split into smaller cells for further occupancy state determination. 
 
-## Accompanying Video
+## Our Paper and Accompanying Video
 
-The video showcasing two real-world applications is available on [Youtube](https://youtu.be/c3dz-WsyohY)
+- The preprint version is available on [arxiv](https://arxiv.org/abs/2307.08493).
 
-## Our paper
+- The video showcasing two real-world applications is available on [Youtube](https://youtu.be/m5QQPbkYYnA).
 
-The preprint version will be released on arxiv soon.
+
+If you are using any code of this repo in your research, please cite our paper as following:
+```
+@misc{cai2023occupancy,
+      title={Occupancy Grid Mapping without Ray-Casting for High-resolution LiDAR Sensors}, 
+      author={Yixi Cai and Fanze Kong and Yunfan Ren and Fangcheng Zhu and Jiarong Lin and Fu Zhang},
+      year={2023},
+      eprint={2307.08493},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
+```
 
 ## Build & Run demo
 ### 1. How to build this project
