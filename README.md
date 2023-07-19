@@ -57,7 +57,45 @@ rosbag play workshop.bag
 roslaunch dmap DMap_velodyne.launch
 rosbag play kitti_04.bag
 ```
-## Guidelines for Sensor Settings
+## Guidelines for Parameters
+The parameters for D-Map are included in the config yaml file and the launch file. We summarize the parameters as below with a brief description.
+### LiDAR Sensor Configuration
+ The configurations required are listed below:
+- ```FOV_shape```: Set 0 for normal FoV shape (e.g., rotating scanning LiDARs); Set 1 for corn shape FoV (e.g., avia LiDAR).
+- ```FOV_theta_range```: The horizontal field of view of LiDAR (Unit: degree).
+- ```FOV_phi_range```: The vertical field of view of LiDAR (Unit: degree).
+- ```FOV_depth```: The detection range of LiDAR (Unit: meter).
+- ```sensor_res_hor```: The horizontal angular resolution of LiDAR (Unit: degree).
+- ```sensor_res_vert```: The vertical angular resolution of LiDAR (Unit: degree).
+
+Note: The parameters should be provided according to the LiDAR's manual sheet. Inappropriate settings might lead to unsatisfying mapping performance.
+
+### Odometry & Point Cloud Input
+- ```point_frame```: Set this param as ```body``` or ```world``` for point cloud provided in the body frame or in the world frame.
+- ```lidar_topics```: The topic name for LiDAR point cloud.
+- ```odom_topic```: The topic name for odometry.
+- ```odom_topic_types```: Set this param as ```odometry``` for ros topic type of ```nav_msgs::Odometry``` or ```pose``` for ros topic type .```geometry_msgs::PoseStamped```.
+- ```fixed_frame```: The frame_id to publish the visualization msgs (e.g., publishing octree and grid map).
+
+### D-Map
+- ```environment```: The bounding box for D-Map (in **yaml** file).
+- ```map_res_min```: The map resolution for D-Map.
+- ```map_res_init```: The initial cell size for occupancy state determination to avoid unnecessary queries (Unit: meter, see algorithm 2 in our paper). Default value is ```5.0```. We suggest using a smaller value for indoor environments (e.g., ```2.0```).
+- ```full_ratio```: The threshold for observation completeness (See algorithm 1 in our paper). Default value is ```0.9```.
+- ```depthmap_accuracy```: The relaxed factor $\gamma$ to trade off between efficiency and accuracy. (See Section IV-D of our paper). Default value is ```1.0``` for no relaxation.
+- ```sliding_en``` and ```sliding_thres```: The switch and threshold for map region sliding. The map will slide when odometry moves beyond the sliding threshold from last move. 
+
+### Auxiliary Params
+- ```print_en```: Enable the full print of D-Map time consumption of each module. 
+- ```log_map``` and ```log_name```: The switch and file name to output D-map.
+- ```vis_en```: Enable rviz for visualization.
+
+## Notes
+
+D-Map requires a projection of point cloud onto a depth image. Please confirm that you have a correct depth image via visualization in rviz. You can check whether D-Map is working normally by:
+- The depth image is correct (ros topic: ```/dmap_depthmap``` ). 
+- At the first update, the shape of the octree map (ros topic: ```/dmap_octree``` ) is consistent to the shape of LiDAR FoV. 
+- The octree map (ros topic: ```/dmap_octree``` ) and the grid map (ros topic: ```/dmap_gridmap``` ) show a consistent map.
 
 ## License
 The source code of D-Map is released under [GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html) license. For commercial use, please contact Mr. Yixi CAI (<yixicai@connect.hku.hk>) or Dr. Fu ZHANG (<fuzhang@hku.hk>).
