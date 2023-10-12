@@ -15,7 +15,7 @@ The map structure of D-Map consists of two parts: the occupied map and the unkno
 
 ## Our Paper and Accompanying Video
 
-- The preprint version is available on [arxiv](https://arxiv.org/abs/2307.08493).
+- Our paper "Occupancy Grid Mapping without Ray-Casting for High-resolution Sensors" is accepted for publication in **Transactions on Robotics (TRO)**. [[Preprint]](https://arxiv.org/pdf/2307.08493.pdf)
 
 - The video showcasing two real-world applications is available on [Youtube](https://youtu.be/m5QQPbkYYnA).
 
