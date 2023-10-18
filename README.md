@@ -15,21 +15,22 @@ The map structure of D-Map consists of two parts: the occupied map and the unkno
 
 ## Our Paper and Accompanying Video
 
-- Our paper "Occupancy Grid Mapping without Ray-Casting for High-resolution Sensors" is accepted for publication in **Transactions on Robotics (TRO)**. [[Preprint]](https://arxiv.org/pdf/2307.08493.pdf)
+- Our paper "Occupancy Grid Mapping without Ray-Casting for High-resolution Sensors" is accepted for publication in **Transactions on Robotics (TRO)**. [[Link]](https://ieeexplore.ieee.org/document/10286126)
 
 - The video showcasing two real-world applications is available on [Youtube](https://youtu.be/m5QQPbkYYnA).
 
 
-If you are using any code of this repo in your research, please cite our paper as following:
+If you are using any code of this repo in your research, please cite our paper as follows:
 ```
-@misc{cai2023occupancy,
-      title={Occupancy Grid Mapping without Ray-Casting for High-resolution LiDAR Sensors}, 
-      author={Yixi Cai and Fanze Kong and Yunfan Ren and Fangcheng Zhu and Jiarong Lin and Fu Zhang},
-      year={2023},
-      eprint={2307.08493},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO}
-}
+@ARTICLE{dmap2023cai,
+  author={Cai, Yixi and Kong, Fanze and Ren, Yunfan and Zhu, Fangcheng and Lin, Jiarong and Zhang, Fu},
+  journal={IEEE Transactions on Robotics}, 
+  title={Occupancy Grid Mapping Without Ray-Casting for High-Resolution LiDAR Sensors}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-20},
+  doi={10.1109/TRO.2023.3323936}}
 ```
 
 ## Build & Run demo
